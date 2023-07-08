@@ -7,15 +7,8 @@ plugins {
 	kotlin("plugin.spring") version "1.8.22"
 }
 
-group = "com.dpavlovich"
-version = "0.0.1-SNAPSHOT"
-
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
-}
-
-repositories {
-	mavenCentral()
 }
 
 extra["springBootAdminVersion"] = "3.1.1"

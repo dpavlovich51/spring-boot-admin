@@ -20,6 +20,8 @@ dependencies {
     implementation("de.codecentric:spring-boot-admin-server-ui-login:1.5.7")
     implementation("org.springframework.boot:spring-boot-starter-security:2.4.0")
 
+    implementation("com.hazelcast:hazelcast:4.0.3")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
