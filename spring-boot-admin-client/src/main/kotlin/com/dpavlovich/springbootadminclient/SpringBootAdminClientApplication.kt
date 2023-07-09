@@ -12,7 +12,7 @@ class SpringBootAdminClientApplication {
 	lateinit var serverUrl: String
 
 	@PostConstruct
-	fun postConstract() {
+	fun postConstruct() {
 		println("show the server url: $serverUrl")
 	}
 

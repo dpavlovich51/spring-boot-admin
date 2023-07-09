@@ -6,28 +6,31 @@ services:
       dockerfile: ./Dockerfile
       context: ./spring-boot-admin-server
     ports:
-      - "8080:8080"
+      - "9999:8080"
 
   client_1:
-    restart: always
     build:
       dockerfile: ./Dockerfile
       context: ./spring-boot-admin-client
     environment:
-      SPRING_BOOT_SERVER: boot-admin-server:8080
+      SPRING_BOOT_SERVER: http://boot-admin-server:8080
     links:
-      - boot-admin-server
-    depends_on:
       - boot-admin-server
 
   client_2:
-    restart: always
     build:
       dockerfile: ./Dockerfile
       context: ./spring-boot-admin-client
     environment:
-      SPRING_BOOT_SERVER: boot-admin-server:8080
+      SPRING_BOOT_SERVER: http://boot-admin-server:8080
     links:
       - boot-admin-server
-    depends_on:
+
+  client_3:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./spring-boot-admin-client
+    environment:
+      SPRING_BOOT_SERVER: http://boot-admin-server:8080
+    links:
       - boot-admin-server
